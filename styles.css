@@ -1,0 +1,479 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ROOT */
+:root {
+    --col-white: hsl(0, 0%, 100%);
+    --col-black: hsl(0, 0%, 0%);
+    --col-dark-gray: hsl(0, 0%, 55%);
+    --col-very-dark-gray: hsl(0, 0%, 41%)
+}
+
+/* GENERAL STYLES */
+body {
+    background-color: var(--col-white);
+    color: var(--col-black);
+    font-family: 'Alata', sans-serif;
+    font-size: 15px;
+}
+
+h1, h2, h3, button {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+h1 {
+    color: var(--col-white);
+    border: 2px solid var(--col-white);
+    padding: 40px;
+    font-size: 50px;
+    font-size: clamp(30px, 4vw, 75px);
+    font-weight: 300;
+    text-align: left;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.margin-left-25 {
+    margin-left: 25px;
+}
+
+.margin-right-25 {
+    margin-right: 25px;
+}
+
+
+main, footer {
+    padding: 75px 10vw;
+}
+
+
+/* SECTIONS */
+header {
+    color: var(--col-white);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    padding: 25px 10vw;
+}
+
+#topper {
+    padding-bottom: 200px;
+}
+
+#logo {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#top-menu {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nav-toggler {
+    color: transparent;
+    background-repeat: no-repeat;
+}
+
+.nav-toggler[menu-open="false"] {
+    background-image: url('images/icon-hamburger.svg');
+}
+
+.nav-toggler[menu-open="true"] {
+    background-image: url('images/icon-close.svg');
+}
+
+nav ul li a {
+    color: var(--col-white);
+    text-decoration: none;
+}
+
+
+nav ul li a:hover, .social-navigation li a:hover{
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--col-white);
+}
+
+#hero-desc h2 {
+    margin-bottom: 25px;
+}
+
+button.mobile-button {
+    margin-top: 50px;
+}
+
+/* BIG SCREENS */
+
+@media only screen and (min-width: 701px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header {
+        background-image: url("images/desktop/image-hero.jpg");
+    }
+
+    .nav-toggler {
+        visibility: hidden;
+    }
+
+    .top-navigation[menu-open="false"] {
+        visibility: visible;
+    }
+
+    #title {
+        width: 550px;
+    }
+
+    #hero {
+        background-image: url('images/desktop/image-interactive.jpg');
+        height: 70vh;
+    }
+
+    #hero-desc {
+        bottom: 0;
+        padding: 50px;
+        width: 35vw;
+    }
+    
+    button.desktop-button {
+        visibility: visible;
+    }
+
+    button.mobile-button {
+        visibility: hidden;
+    }
+ 
+    #portfolio-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    #portfolio-head h2 {
+        justify-self: start;
+    }
+
+    .card {
+        background-repeat: no-repeat;
+        background-size: auto;
+        min-height: 450px;
+    }
+
+    #card-deep-earth {
+        background-image:url(images/desktop/image-deep-earth.jpg);
+    }
+
+    #card-night-arcade{
+        background-image:url(images/desktop/image-night-arcade.jpg);
+    }
+    
+    #card-soccer-team{
+        background-image:url(images/desktop/image-soccer-team.jpg);
+    }
+    
+    #card-grid{
+        background-image:url(images/desktop/image-grid.jpg);
+    }
+    
+    #card-from-above{
+        background-image:url(images/desktop/image-from-above.jpg);
+    }
+    
+    #card-pocket-borealis{
+        background-image:url(images/desktop/image-pocket-borealis.jpg);
+    }
+    
+    #card-curiosity{
+        background-image:url(images/desktop/image-curiosity.jpg);
+    }
+    
+    #card-fisheye{
+        background-image:url(images/desktop/image-fisheye.jpg);
+    }
+
+    #footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    } 
+
+    .vertical-grid {
+        display: grid;
+        grid-template-rows: 50px 50px;
+        align-items: center;
+    }
+
+}
+
+/* SMALL SCREENS */
+
+@media only screen and (max-width: 700px) {
+
+    body {
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-rows: 1fr 1fr;
+    }
+
+    header {
+        background-image: url("images/mobile/image-hero.jpg");
+    }
+
+    .top-navigation li {
+        display: block;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 300;
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-bottom: 25px;
+    }
+
+    .top-navigation li.margin-left-25 {
+        margin-left: 0;
+    }
+
+    #topper {
+        align-items: baseline;
+    }
+
+    #topper[menu-open="true"] {
+        background-color: var(--col-black);
+        height: 100vh;
+        padding: 75px;
+        margin: -75px;
+        position: relative;
+        z-index: 3;
+    }
+
+    .nav-toggler {
+        visibility: visible;
+    }
+
+    .top-navigation[menu-open="false"] {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+
+    .top-navigation[menu-open="true"] {
+        visibility: visible;
+        position: absolute;
+        left: 75px;
+        top: 40vh;
+    }
+
+    #title {
+        width: 80vw;
+    }
+
+    #hero {
+        height: 115vh;
+        background-image: url('images/mobile/image-interactive.jpg');
+    }
+    
+    #hero-desc {
+        top: 65vh;
+    }
+    
+    button.desktop-button {
+        visibility: hidden;
+    }
+
+    button.mobile-button {
+        visibility: visible;
+    }
+    
+    #portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 120px;
+    }
+
+    #card-deep-earth {
+        background-image:url(images/mobile/image-deep-earth.jpg);
+    }
+    
+    #card-night-arcade{
+        background-image:url(images/mobile/image-night-arcade.jpg);
+    }
+    
+    #card-soccer-team{
+        background-image:url(images/mobile/image-soccer-team.jpg);
+    }
+    
+    #card-grid{
+        background-image:url(images/mobile/image-grid.jpg);
+    }
+    
+    #card-from-above{
+        background-image:url(images/mobile/image-from-above.jpg);
+    }
+    
+    #card-pocket-borealis{
+        background-image:url(images/mobile/image-pocket-borealis.jpg);
+    }
+    
+    #card-curiosity{
+        background-image:url(images/mobile/image-curiosity.jpg);
+    }
+    
+    #card-fisheye{
+        background-image:url(images/mobile/image-fisheye.jpg);
+    }
+
+    #footer-container > * {
+        margin-bottom: 50px;
+    }
+
+    #footer-container .right ul {
+        margin-bottom: 15px;
+    }
+
+    .left, .right {
+        text-align: center;
+    }
+
+    .margin-left-25, .margin-right-25 {
+        margin: 5px;
+    }
+
+    .bottom-navigation li {
+        display: block;
+        margin: 25px 0;
+    }
+}
+
+#title {
+    position: absolute;
+    top: 30vh;
+    z-index: 0;
+}
+
+#hero {
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#hero-desc {
+    position: absolute;
+    right: 0;
+    background-color: var(--col-white);
+}
+
+#hero-desc p {
+    color: var(--col-dark-gray);
+}
+
+#portfolio-head {
+    padding: 75px 0;
+}
+
+button {
+    justify-self: end;
+    padding: 10px 25px 5px 25px;
+    border: 1px solid var(--col-black);
+    background-color: var(--col-white);
+    cursor: pointer;
+}
+
+button:hover {
+    color: var(--col-white);
+    background-color: var(--col-black);
+}
+
+#portfolio-grid {
+    gap: 20px;
+}
+
+
+.card {
+    position: relative; 
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover img {
+    opacity: 0.4;
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: top;
+}
+
+.card h3 {
+    color: var(--col-white);
+    position: absolute;
+    bottom: 35px;
+    margin: 0 35px;
+    font-size: 24px;
+}
+
+.card:hover h3 {
+    color: var(--col-black);
+}
+
+footer {
+    background-color: var(--col-black);
+    color: var(--col-white);
+}
+
+footer>.flex {
+    margin-bottom: 25px;
+}
+
+.attribution { 
+    margin-top: 50px;
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
